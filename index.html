@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Daily Support Tool</title>
+  <style>
+    body {
+      font-family: 'Arial Rounded MT Bold', sans-serif;
+      background-color: #f0fdf4;
+      text-align: center;
+      padding: 30px;
+      color: #14532d;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 18px;
+      background-color: #10b981;
+      border: none;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: 0.2s;
+    }
+    button:hover {
+      background-color: #059669;
+    }
+    #card {
+      margin-top: 30px;
+    }
+    img {
+      width: 500px;
+      max-width: 90%;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+  </style>
+</head>
+<body>
+  <h1>Daily Support Tool</h1>
+  <button onclick="drawCard()">Draw a Card</button>
+  <div id="card"></div>
+
+  <script>
+    const cards = [
+      "https://res.cloudinary.com/djom96coc/image/upload/v1747637832/green_card_set2_4_rzjxip.png",
+      "https://res.cloudinary.com/djom96coc/image/upload/v1747637832/green_card_set2_1_w2ysuw.png",
+      "https://res.cloudinary.com/djom96coc/image/upload/v1747637832/ChatGPT_Image_19_maj_2025_08_46_55_bsey93.png",
+      "https://res.cloudinary.com/djom96coc/image/upload/v1747637829/green_card_set2_2_brbikb.png",
+      "https://res.cloudinary.com/djom96coc/image/upload/v1747564112/reset_button_eonbhj.png",
+      "https://res.cloudinary.com/djom96coc/image/upload/v1747564112/safe_container_jhubj4.png",
+      "https://res.cloudinary.com/djom96coc/image/upload/v1747564111/ask_listen_eqhpyp.png",
+      "https://res.cloudinary.com/djom96coc/image/upload/v1747564111/you_are_not_too_much_lo9mvh.png"
+    ];
+
+    function drawCard() {
+      const randomIndex = Math.floor(Math.random() * cards.length);
+      const image = cards[randomIndex];
+      document.getElementById("card").innerHTML = `<img src="${image}" alt="Support Card">`;
+    }
+  </script>
+</body>
+</html>
