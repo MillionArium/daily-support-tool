@@ -34,8 +34,9 @@
       margin-top: 30px;
     }
      #card img {
-      width: 100%;              /* ✅ More responsive on mobile */
+      width: 90%;              /* ✅ More responsive on mobile */
       max-width: 500px;
+      height: auto !important;
       border-radius: 16px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
@@ -101,6 +102,8 @@ section.intro p {
 
   #card img {
     max-height: 70vh !important;
+    width: 90% !important;       /* also shrink width on mobile */
+    height: auto !important;     /* keep proportional */
     object-fit: contain;
   }
   footer {
