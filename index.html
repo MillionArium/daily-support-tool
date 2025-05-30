@@ -100,10 +100,15 @@ section.intro p {
     font-size: 0.8rem !important;
     padding: 1.5rem 1rem !important;
   }
-  /* ✅ NEW — Move card section up after intro folds */
-  #intro.folded + #main {
-    margin-top: -60px;
-  }
+}
+ /* ✅ NEW — Wrap the card & button area */
+#main {
+  transition: margin-top 0.6s ease;
+}
+
+/* ✅ Move card section up on all screens when intro folds */
+#intro.folded + #main {
+  margin-top: -40px;
 }
   </style>
 </head>
