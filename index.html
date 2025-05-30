@@ -29,12 +29,14 @@
     button:hover {
       background-color: #059669;
     }
-    #card {
+       #card {
       margin-top: 30px;
+      opacity: 0;               /* ✨ Fade-in effect */
+      transition: opacity 1s;   /* ✨ Smooth transition *
     }
-    img {
-      width: 500px;
-      max-width: 90%;
+     #card img {
+      width: 100%;              /* ✅ More responsive on mobile */
+      max-width: 500px;
       border-radius: 16px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
