@@ -38,27 +38,42 @@
       border-radius: 16px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
+     /* NEW/UPDATED: Transition for intro folding */
+    #intro {
+      max-height: 1000px;
+      opacity: 1;
+      transition: max-height 1s ease, opacity 1s ease;
+      overflow: hidden;
+    }
+
+    #intro.folded {
+      max-height: 0;
+      opacity: 0;
+      padding: 0;
+      margin: 0;
+    }
   </style>
 </head>
 <body>
   <h1>Daily Support Tool - The Millionarium Deck</h1>
 
-<section style="max-width: 700px; margin: 0 auto 30px; padding: 0.9rem; text-align: center; font-family: 'Georgia', serif;">
-  <p style="font-size: 1rem; color: #14532d; margin-top: 1rem;">
-    This deck was created as a gentle, magical support tool for neurodivergent minds — especially those navigating ADHD, overwhelm, or emotional storms.
-  </p>
-  <p style="font-size: 1rem; color: #14532d;">
-    Each card offers a moment of grounding, clarity, or wonder — a small spark to help reconnect with focus, body, or creativity.
-  </p>
-  <p style="font-size: 1rem; color: #14532d;">
-    Click the button and receive a card. Let it be a pause, a prompt, or a pocket-sized companion for the moment you’re in. No pressure. No fixing. Just one step forward.
-  </p>
-  <blockquote style="margin: 2rem 0; font-style: italic; color: #4b5563;">
-    This is not a to-do list.<br>
-    It’s a soft landing. A sensory invitation.<br>
-    A reminder that <strong>being</strong> — as is — is already <strong>enough<strong>.
-  </blockquote>
-</section>
+<!-- NEW/UPDATED: Added id="intro" to animate this block -->
+  <section id="intro" style="max-width: 700px; margin: 0 auto 30px; padding: 0.9rem; text-align: center; font-family: 'Georgia', serif;">
+    <p style="font-size: 1rem; color: #14532d; margin-top: 1rem;">
+      This deck was created as a gentle, magical support tool for neurodivergent minds — especially those navigating ADHD, overwhelm, or emotional storms.
+    </p>
+    <p style="font-size: 1rem; color: #14532d;">
+      Each card offers a moment of grounding, clarity, or wonder — a small spark to help reconnect with focus, body, or creativity.
+    </p>
+    <p style="font-size: 1rem; color: #14532d;">
+      Click the button and receive a card. Let it be a pause, a prompt, or a pocket-sized companion for the moment you’re in. No pressure. No fixing. Just one step forward.
+    </p>
+    <blockquote style="margin: 2rem 0; font-style: italic; color: #4b5563;">
+      This is not a to-do list.<br>
+      It’s a soft landing. A sensory invitation.<br>
+      A reminder that <strong>being</strong> — as is — is already <strong>enough</strong>.
+    </blockquote>
+  </section>
 
 <button onclick="drawCard()">Draw a Card</button>
 
@@ -124,10 +139,18 @@
       "https://res.cloudinary.com/djom96coc/image/upload/v1747564111/you_are_not_too_much_lo9mvh.png"
     ];
 
+       // NEW/UPDATED: Function to hide the intro before showing card
     function drawCard() {
+      const introSection = document.getElementById("intro");
+      introSection.classList.add("folded");
+
       const randomIndex = Math.floor(Math.random() * cards.length);
       const image = cards[randomIndex];
-      document.getElementById("card").innerHTML = `<img src="${image}" alt="Support Card">`;
+
+      // Wait a bit to let the intro animate out before showing the card
+      setTimeout(() => {
+        document.getElementById("card").innerHTML = `<img src="${image}" alt="Support Card">`;
+      }, 1000); // matches CSS transition duration
     }
   </script>
   <footer style="text-align: center; padding: 2rem 1rem; font-size: 0.7rem; color: #888;">
