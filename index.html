@@ -203,8 +203,36 @@ section.intro p {
       const introSection = document.getElementById("intro");
       introSection.classList.add("folded");
 
-      const randomIndex = Math.floor(Math.random() * cards.length);
-      const image = cards[randomIndex];
+   let shuffledCards = [];
+let currentCardIndex = 0;
+
+function shuffle(array) {
+  // Fisher-Yates shuffle (better than .sort for randomness)
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+function getNextCard() {
+  if (shuffledCards.length === 0 || currentCardIndex >= shuffledCards.length) {
+    shuffledCards = shuffle([...cards]); // fresh shuffle
+    currentCardIndex = 0;
+  }
+
+  const image = shuffledCards[currentCardIndex];
+  currentCardIndex++;
+
+  return image;
+}
+
+// Call this when button is clicked:
+introSection.classList.add("folded");
+
+const image = getNextCard();
+// Use 'image' as before
+
 
       // Wait a bit to let the intro animate out before showing the card
       setTimeout(() => {
