@@ -200,8 +200,16 @@ section.intro p {
 
        // NEW/UPDATED: Function to hide the intro before showing card
     function drawCard() {
-      const introSection = document.getElementById("intro");
-      introSection.classList.add("folded");
+  const introSection = document.getElementById("intro");
+  introSection.classList.add("folded");
+
+  const image = getNextCard();
+
+  setTimeout(() => {
+    document.getElementById("card").innerHTML = `<img src="${image}" alt="Support Card">`;
+  }, 1000);
+}
+
 
    let shuffledCards = [];
 let currentCardIndex = 0;
