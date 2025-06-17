@@ -314,13 +314,18 @@ const image = getNextCard();
   }
 
   @media (max-width: 600px) {
-    .card-container img {
-      width: 90%;
-    }
+  .card-container {
+    flex-wrap: nowrap; /* karty w jednej linii */
+    overflow-x: auto;  /* umożliwia poziomy scroll, jeśli się nie zmieszczą */
+  }
 
-    .card-container img.expanded {
-      width: 90% !important;
-    }
+  .card-container img {
+    width: 22%;       /* mniejsze karty obok siebie */
+    flex-shrink: 0;   /* zapobiega kurczeniu się kart przy scrollu */
+  }
+
+  .card-container img.expanded {
+    width: 60% !important; /* powiększona karta na małym ekranie */
   }
 </style>
 <div class="card-container">
