@@ -280,13 +280,79 @@ const image = getNextCard();
   </p>
  <div class="footer-download" style="margin-top: 4rem; text-align: center;">
  <!-- Four Cards Section -->
+   <style>
+  .card-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 40px auto;
+    max-width: 1000px;
+    transition: all 0.3s ease;
+  }
+
+  .card-container.expanded-view {
+    justify-content: center;
+  }
+
+  .card-container img {
+    width: 22%;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1;
+  }
+
+  .card-container img.expanded {
+    width: 60% !important;
+    transform: scale(1.05);
+    z-index: 10;
+  }
+
+  .card-container img.hidden {
+    display: none;
+  }
+
+  @media (max-width: 600px) {
+    .card-container img {
+      width: 90%;
+    }
+
+    .card-container img.expanded {
+      width: 90% !important;
+    }
+  }
+</style>
+
 <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin: 40px auto; max-width: 1000px;">
   <img src="https://res.cloudinary.com/djom96coc/image/upload/v1750109600/ChatGPT_Image_12_cze_2025_19_24_02_uwaxrd.png" alt="Card 1" style="width: 22%; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
   <img src="https://res.cloudinary.com/djom96coc/image/upload/v1750109598/ChatGPT_Image_13_cze_2025_19_37_44_liyzh9.png" alt="Card 2" style="width: 22%; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
   <img src="https://res.cloudinary.com/djom96coc/image/upload/v1750109597/ChatGPT_Image_14_cze_2025_20_50_21_sppnvq.png" alt="Card 3" style="width: 22%; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
   <img src="https://res.cloudinary.com/djom96coc/image/upload/v1750109598/ChatGPT_Image_16_cze_2025_21_58_08_c3p3nf.png" alt="Card 4" style="width: 22%; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
 </div>
-   
+   <script>
+  const container = document.querySelector('.card-container');
+  const cards = document.querySelectorAll('.card-container img');
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      const isExpanded = card.classList.contains('expanded');
+
+      cards.forEach(c => c.classList.remove('expanded', 'hidden'));
+      container.classList.remove('expanded-view');
+
+      if (!isExpanded) {
+        card.classList.add('expanded');
+        container.classList.add('expanded-view');
+        cards.forEach(c => {
+          if (c !== card) c.classList.add('hidden');
+        });
+      }
+    });
+  });
+</script>
+
 <a href="https://drive.google.com/file/d/1tYQxAR_C92aVfWpX2QBf3l3Pr_Hc5sXt/view?usp=sharing" target="_blank" rel="noopener noreferrer">
   <button style="padding: 0.4rem 1rem; background-color: #aecdd2; color: white; border: none; border-radius: 6px; font-size: 0.7rem; cursor: pointer; box-shadow: 0 0 10px rgba(255,255,255,0.3); margin-top: 0.5rem;">
       🧠 The Polyvagal Theory PDF
