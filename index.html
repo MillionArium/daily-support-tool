@@ -313,19 +313,22 @@ const image = getNextCard();
     display: none;
   }
 
-  @media (max-width: 600px) {
+@media (max-width: 600px) {
   .card-container {
-    flex-wrap: nowrap; /* karty w jednej linii */
-    overflow-x: auto;  /* umożliwia poziomy scroll, jeśli się nie zmieszczą */
+    flex-wrap: wrap;      /* pozwala zawijać do nowego wiersza */
+    justify-content: space-between; /* rozstawia karty równo */
   }
 
   .card-container img {
-    width: 22%;       /* mniejsze karty obok siebie */
-    flex-shrink: 0;   /* zapobiega kurczeniu się kart przy scrollu */
+    width: 45%;           /* dwie karty obok siebie */
+    margin-bottom: 20px;  /* odstęp między rzędami */
   }
 
   .card-container img.expanded {
-    width: 60% !important; /* powiększona karta na małym ekranie */
+    width: 70% !important; /* powiększona karta zajmie prawie cały ekran */
+    margin-bottom: 40px;
+  }
+}
   }
 </style>
 <div class="card-container">
