@@ -199,47 +199,42 @@ section.intro p {
       "https://res.cloudinary.com/djom96coc/image/upload/v1747564111/you_are_not_too_much_lo9mvh.png"
     ];
 
-       // NEW/UPDATED: Function to hide the intro before showing card
-          function drawCard() {
-      const introSection = document.getElementById("intro");
-      introSection.classList.add("folded");
+       let shuffledCards = shuffle([...cards]);
+  let currentCardIndex = 0;
 
-   let shuffledCards = [];
-let currentCardIndex = 0;
-
-function shuffle(array) {
-  // Fisher-Yates shuffle (better than .sort for randomness)
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-}
-
-function getNextCard() {
-  if (shuffledCards.length === 0 || currentCardIndex >= shuffledCards.length) {
-    shuffledCards = shuffle([...cards]); // fresh shuffle
-    currentCardIndex = 0;
-  }
-
-  const image = shuffledCards[currentCardIndex];
-  currentCardIndex++;
-
-  return image;
-}
-
-// Call this when button is clicked:
-introSection.classList.add("folded");
-
-const image = getNextCard();
-// Use 'image' as before
-
-      // Wait a bit to let the intro animate out before showing the card
-      setTimeout(() => {
-        document.getElementById("card").innerHTML = `<img src="${image}" alt="Support Card">`;
-      }, 1000); // matches CSS transition duration
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
     }
-  </script>
+    return array;
+  }
+
+  function getNextCard() {
+    // Gdy wszystkie pokazane — przetasuj ponownie
+    if (currentCardIndex >= shuffledCards.length) {
+      shuffledCards = shuffle([...cards]);
+      currentCardIndex = 0;
+    }
+
+    const image = shuffledCards[currentCardIndex];
+    currentCardIndex++;
+    return image;
+  }
+
+  function drawCard() {
+    const introSection = document.getElementById("intro");
+    introSection.classList.add("folded");
+
+    const image = getNextCard();
+    if (!image) return; // Dla bezpieczeństwa
+
+    setTimeout(() => {
+      document.getElementById("card").innerHTML = `<img src="${image}" alt="Support Card">`;
+    }, 1000);
+  }
+</script>
+  
   <footer style="text-align: center; padding: 2rem 1rem; font-size: 0.7rem; color: #888;">
   <p>© 2025 <strong>Millionarium - Weronika Macioszczyk</strong>. All rights reserved.</p>
   <p>This deck was lovingly created to support and empower neurodivergent minds — made for us, by one of us.</p>
