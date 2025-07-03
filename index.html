@@ -556,11 +556,18 @@ Choose one. Sit with it. Let it show you something. </p>
   }
   @media (max-width: 400px) {
     .card {
-      flex: 0 0 90vw;
-      padding: 0;
-     width: 70% !important;
+    flex: 0 0 80vw;         /* karta zajmuje 80% szerokości ekranu */
+    width: 80vw !important;
+    padding: 8px;
     height: auto !important;
+  }
+
+  .card img {
+    width: 80vw;            /* obrazek mniejszy */
+    height: auto;
+    max-height: 50vh;       /* ograniczona wysokość, żeby nie zajmował za dużo miejsca */
     object-fit: contain;
+    border-radius: 6px;
     }
     .card-content {
       padding: 12px;
