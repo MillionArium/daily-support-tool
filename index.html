@@ -832,6 +832,17 @@ Alternate working between lower and upper vertebrae-heart chamber pairs (e.g., L
       alt="QR code to download PDF" 
       style="width: 90px; height: 90px; margin-top: 0.3rem; border-radius: 6px; box-shadow: 0 0 6px rgba(255,255,255,0.2);">
   </div>
-    <div class="footer-download" style="margin-top: 4rem; text-align: center;">      
+    <div class="footer-download" style="margin-top: 4rem; text-align: center;"> 
+      @media (max-width: 600px) {
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+    text-align: justify;
+  }
+
+  p::before {
+    content: none; /* usuwa potencjalne niechciane znaczniki */
+  }
 </body>
 </html>
