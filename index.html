@@ -1831,7 +1831,21 @@ You don’t need to figure it all out. </p>
         🌕 Temple of the Nine and The Secret Garden of Godesses PDF
       </button>
     </a>
-
+    <style>
+@media (max-width: 600px) {
+  div[style*="max-width: 720px"] img {
+    max-width: 90vw !important; /* większa szerokość na telefonie */
+    width: 90vw !important;     /* wymuszenie szerokości */
+    height: auto !important;
+    margin: 1.5rem 0 !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+      </style>
     <!-- DODANE ZAMKNIĘCIE POPRZEDNIEGO <div> -->
   </div>
 <div style="margin-top: 1.2rem; display: flex; flex-direction: column; align-items: center;">
