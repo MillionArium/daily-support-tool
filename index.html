@@ -1209,38 +1209,44 @@ This project is a gentle reminder of the power of these words — inviting you t
     color: #666;
     margin: 0;
   }
-  /* Responsywność */
-  @media (max-width: 768px) {
-    .card {
-      flex: 0 0 80vw;
-      min-height: 150px;
-    }
-  }
-  @media (max-width: 400px) {
-    .card {
-    flex: 0 0 80vw;         /* karta zajmuje 80% szerokości ekranu */
-    width: 80vw !important;
-  
-    height: auto !important;
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .section-title {
+    font-size: 1.6em;
   }
 
-  .card img {
-    width: 80vw;            /* obrazek mniejszy */
-    height: auto;
-    max-height: 50vh;       /* ograniczona wysokość, żeby nie zajmował za dużo miejsca */
-    object-fit: contain;
-    border-radius: 6px;
-    }
-    .card-content {
-      padding: 12px;
-    }
-    .card-content h3 {
-      font-size: 1.1rem;
-    }
-    .card-content p {
-      font-size: 0.85rem;
-    }
+  .quote {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
   }
+
+  .content-wrapper {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    width: 80vw;         /* tak jak w kodzie dla .card */
+    margin: 0 auto 2rem; /* wyśrodkowanie bez przesunięcia w lewo */
+    padding-left: 0;     /* usunięcie wewnętrznego odstępu po lewej */
+    text-align: justify;
+  }
+
+  .content-wrapper img {
+    width: 100%;         /* obraz zajmuje całą szerokość kontenera */
+    height: auto;
+    max-width: 100%;
+  }
+
+  /* Na telefonie listy mają równe odstępy między kropkami a tekstem */
+  .content-wrapper ul,
+  .content-wrapper ol {
+    margin-left: 1.2rem;
+  }
+
+  .content-wrapper ul li,
+  .content-wrapper ol li {
+    margin-bottom: 0.5rem;
+  }
+}
 </style>
 
 <div class="carousel" aria-label="7 Veils Horizontal Carousel">
