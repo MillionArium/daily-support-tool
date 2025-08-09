@@ -800,23 +800,21 @@ section.intro p {
   }
 
   /* Mobile adjustments */
-  @media (max-width: 600px) {
-    .section-title {
-      font-size: 1.6em;
-    }
+@media (max-width: 600px) {
+  .content-wrapper {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    width: 80vw;         /* szerokość 80% ekranu */
+    margin: 0 auto 2rem; /* wyśrodkowanie i odstęp tylko na dole */
+    text-align: justify;
+  }
 
-    .quote {
-      font-size: 1rem;
-      line-height: 1.4;
-      margin-bottom: 1rem;
-    }
-
-    .content-wrapper {
-      font-size: 0.95rem;
-      line-height: 1.5;
-      margin: 1rem 1rem 2rem;
-      text-align: justify;
-    }
+  .content-wrapper img {
+    width: 80vw;         /* obrazek dopasowany do szerokości contentu */
+    height: auto;
+    max-width: 100%;
+  }
+}
 
     /* Na telefonie listy mają równe odstępy między kropkami a tekstem */
     .content-wrapper ul,
