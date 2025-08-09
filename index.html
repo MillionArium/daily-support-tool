@@ -1450,6 +1450,21 @@ This project is a gentle reminder of the power of these words — inviting you t
     margin: 0;
     padding: 0;
   }
+  @media (max-width: 600px) {
+  .content-wrapper {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    width: 100vw;         /* szerokość 80% ekranu */
+    margin: 0 auto 2rem; /* wyśrodkowanie i odstęp tylko na dole */
+    text-align: justify;
+  }
+
+  .content-wrapper img {
+    width: 100vw;         /* obrazek dopasowany do szerokości contentu */
+    height: auto;
+    max-width: 100%;
+  }
+}
 
   .section-title {
     font-size: 1.6em;
@@ -1512,6 +1527,21 @@ This project is a gentle reminder of the power of these words — inviting you t
   body, main, .container, .wrapper, .projects-section, .project-card {
     margin: 0;
     padding: 0;
+    @media (max-width: 600px) {
+  .content-wrapper {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    width: 100vw;         /* szerokość 80% ekranu */
+    margin: 0 auto 2rem; /* wyśrodkowanie i odstęp tylko na dole */
+    text-align: justify;
+  }
+
+  .content-wrapper img {
+    width: 100vw;         /* obrazek dopasowany do szerokości contentu */
+    height: auto;
+    max-width: 100%;
+  }
+}
   }
  @media (max-width: 600px) {
     .section-title {
@@ -1734,12 +1764,20 @@ Whether you are currently overwhelmed, in transition, or simply seeking greater 
   <style>
 
 @media (max-width: 600px) {
-  body, main, .container, .wrapper, .projects-section, .project-card {
-    margin: 0;
-    padding: 0;
+  .content-wrapper {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    width: 100vw;         /* szerokość 80% ekranu */
+    margin: 0 auto 2rem; /* wyśrodkowanie i odstęp tylko na dole */
+    text-align: justify;
   }
-    }
+
+  .content-wrapper img {
+    width: 100vw;         /* obrazek dopasowany do szerokości contentu */
+    height: auto;
+    max-width: 100%;
   }
+}
 </style>
  <div class="footer-download" style="margin-top: 4rem; text-align: center;">
 
