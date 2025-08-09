@@ -1209,8 +1209,13 @@ This project is a gentle reminder of the power of these words — inviting you t
     color: #666;
     margin: 0;
   }
-/* Mobile adjustments */
 @media (max-width: 600px) {
+  /* Reset marginesów i paddingów rodziców, by usunąć przesunięcia */
+  body, main, .container, .wrapper {
+    margin: 0;
+    padding: 0;
+  }
+
   .section-title {
     font-size: 1.6em;
   }
@@ -1224,9 +1229,9 @@ This project is a gentle reminder of the power of these words — inviting you t
   .content-wrapper {
     font-size: 0.95rem;
     line-height: 1.5;
-    width: 80vw;         /* tak jak w kodzie dla .card */
-    margin: 0 auto 2rem; /* wyśrodkowanie bez przesunięcia w lewo */
-    padding-left: 0;     /* usunięcie wewnętrznego odstępu po lewej */
+    width: 80vw;         /* 80% szerokości ekranu */
+    margin: 0 auto 2rem; /* wyśrodkowane z dolnym marginesem */
+    padding: 0;          /* usuwa wewnętrzne odstępy */
     text-align: justify;
   }
 
@@ -1236,7 +1241,7 @@ This project is a gentle reminder of the power of these words — inviting you t
     max-width: 100%;
   }
 
-  /* Na telefonie listy mają równe odstępy między kropkami a tekstem */
+  /* Listy z odpowiednimi odstępami */
   .content-wrapper ul,
   .content-wrapper ol {
     margin-left: 1.2rem;
