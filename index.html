@@ -1364,7 +1364,7 @@ This project is a gentle reminder of the power of these words — inviting you t
 <div class="container" style="text-align: center;">
   
 <div class="content-wrapper">
- <img src="https://res.cloudinary.com/djom96coc/image/upload/v1749139094/Ziemia_i_Serce_fa24np.png"
+ <img class="big-responsive-image" src="https://res.cloudinary.com/djom96coc/image/upload/v1749139094/Ziemia_i_Serce_fa24np.png"
      style="max-width: 60%; height: auto; margin: 1rem 0; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: block; margin-left: auto; margin-right: auto;"
      
 
@@ -1523,23 +1523,17 @@ This project is a gentle reminder of the power of these words — inviting you t
   </div>
 </div>
  <style>
-   @media (max-width: 600px) {
-  body, main, .container, .wrapper, .projects-section, .project-card {
-    margin: 0;
-    padding: 0;
-    @media (max-width: 600px) {
-  .content-wrapper {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    width: 90vw;         /* szerokość 80% ekranu */
-    margin: 0 auto 2rem; /* wyśrodkowanie i odstęp tylko na dole */
-    text-align: justify;
-  }
-
-  .content-wrapper img {
-    width: 90vw;         /* obrazek dopasowany do szerokości contentu */
-    height: auto;
-    max-width: 100%;
+@media (max-width: 600px) {
+  img.big-responsive-image {
+    max-width: 90vw !important;
+    width: 90vw !important;
+    height: auto !important;
+    margin: 1.5rem 0 !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }
   }
@@ -1580,7 +1574,7 @@ This project is a gentle reminder of the power of these words — inviting you t
   
 <!-- Oddzielny kontener dla obrazka -->
 <div class="hero-image" style="text-align:center;">
-  <img src="https://res.cloudinary.com/djom96coc/image/upload/v1754467681/ChatGPT_Image_4_sie_2025_17_43_45_lvdd8u.png"
+  <img class="big-responsive-image" src="https://res.cloudinary.com/djom96coc/image/upload/v1754467681/ChatGPT_Image_4_sie_2025_17_43_45_lvdd8u.png"
        style="width: 60%; max-width: 768px; height: auto; margin: 1rem auto; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: block;">
 </div>
  <!-- Kontener dla tekstu -->
@@ -1762,20 +1756,17 @@ Whether you are currently overwhelmed, in transition, or simply seeking greater 
     </button>
   </a>
   <style>
-
 @media (max-width: 600px) {
-  .content-wrapper {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    width: 90vw;         /* szerokość 80% ekranu */
-    margin: 0 auto 2rem; /* wyśrodkowanie i odstęp tylko na dole */
-    text-align: justify;
-  }
-
-  .content-wrapper img {
-    width: 90vw;         /* obrazek dopasowany do szerokości contentu */
-    height: auto;
-    max-width: 100%;
+  img.big-responsive-image {
+    max-width: 90vw !important;
+    width: 90vw !important;
+    height: auto !important;
+    margin: 1.5rem 0 !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }
 </style>
