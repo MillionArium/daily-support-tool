@@ -1831,10 +1831,18 @@ You don’t need to figure it all out. </p>
 }
 
 @media (max-width: 600px) {
-  .big-responsive-image {
-    max-width: 80vw !important;  /* na telefonie szerokość 90% viewportu */
-    width: 80vw !important;
-   
+  .content-wrapper {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    width: 100vw;         /* szerokość 90% ekranu */
+    margin: 0 auto 2rem; /* wyśrodkowanie i odstęp tylko na dole */
+    text-align: justify;
+  }
+
+  .content-wrapper img {
+    width: 100vw;         /* obrazek dopasowany do szerokości contentu */
+    height: auto;
+    max-width: 100%;
   }
 }
       </style>
