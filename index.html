@@ -2074,7 +2074,7 @@ It’s an invitation. </strong></p>
   </div>
 <div style="margin-top: 1.2rem; display: flex; flex-direction: column; align-items: center;">  
   <div class="footer-download" style="margin-top: 4rem; text-align: center;">
-  <h1>Once upon a time...</h1>
+
 
 <div id="polyvagal-intro" style="margin-top: 4rem; text-align: justify; color: #1f2937; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6;">
   <p>
@@ -2118,22 +2118,24 @@ It’s an invitation. </strong></p>
 
 </div>
  <div class="footer-download" style="margin-top: 4rem; text-align: center;">
- <!-- five Cards Section -->
+ <!-- Six Cards Section -->
 <style>
   .card-container {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 20px;
     margin: 40px auto;
-    max-width: 1200px;
+    max-width: 1200px; /* trochę szersze, żeby 6 zmieściło się wygodnie */
+    transition: all 0.3s ease;
+  }
+
+  .card-container.expanded-view {
+    justify-content: center;
   }
 
   .card-container img {
-    flex: 1 1 calc(20% - 15px); /* 5 kart w rzędzie */
-    max-width: calc(20% - 15px);
-    height: 180px; /* stała wysokość miniatury */
-    object-fit: cover; /* przycięcie obrazka */
+    width: 15%; /* 100% / 6 kart ≈ 16.6%, zostawiamy 15% żeby mieć marginesy */
     border-radius: 16px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     cursor: pointer;
@@ -2141,15 +2143,9 @@ It’s an invitation. </strong></p>
     z-index: 1;
   }
 
-  .card-container.expanded-view {
-    justify-content: center;
-  }
-
   .card-container img.expanded {
-    flex: none;
-    width: 60% !important; 
-    height: auto !important;
-    transform: scale(1.05);
+    width: 50% !important;
+    transform: scale(1);
     z-index: 10;
   }
 
@@ -2158,14 +2154,19 @@ It’s an invitation. </strong></p>
   }
 
   @media (max-width: 600px) {
+    .card-container {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
     .card-container img {
-      flex: 1 1 45%;
-      max-width: 45%;
-      height: 140px;
+      width: 45%; 
+      margin-bottom: 20px;
     }
 
     .card-container img.expanded {
       width: 90% !important;
+      margin-bottom: 40px;
     }
   }
 </style>
@@ -2175,8 +2176,8 @@ It’s an invitation. </strong></p>
   <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681491/ChatGPT_Image_19_sie_2025_16_46_37_iddbfk.png" alt="Card 2">
   <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681496/chapter3_eae6qs.png" alt="Card 3">
   <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681489/ChatGPT_Image_20_sie_2025_09_45_55_ax7x9s.png" alt="Card 4">
-  <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681491/ChatGPT_Image_20_sie_2025_09_52_56_sogpxa.png" alt="Card 5">
   
+  <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681491/ChatGPT_Image_20_sie_2025_09_52_56_sogpxa.png" alt="Card 5">
 </div>
 </div>
 <script>
@@ -2202,7 +2203,7 @@ It’s an invitation. </strong></p>
     });
   });
 </script>
-
+<div class="footer-download" style="margin-top: 4rem; text-align: center;">
   <a href="https://drive.google.com/file/d/1KhDWIQrBwb6E7BEEACnCt0afnwfc1HyT/view?usp=sharing" target="_blank" rel="noopener noreferrer">
     <button style="padding: 0.4rem 1rem; background-color: #aecdd2; color: white; border: none; border-radius: 6px; font-size: 0.7rem; cursor: pointer; box-shadow: 0 0 10px rgba(255,255,255,0.3); margin-top: 0.5rem;">
       👫 Once Upon A Time PDF
