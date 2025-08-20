@@ -2121,13 +2121,8 @@ It’s an invitation. </strong></p>
  <!-- Six Cards Section -->
 </div> 
 
-<div class="card-container">
-  <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681494/ChatGPT_Image_19_sie_2025_10_14_56_to8dhy.png" alt="Card 1">
-  <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681491/ChatGPT_Image_19_sie_2025_16_46_37_iddbfk.png" alt="Card 2">
-  <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681496/chapter3_eae6qs.png" alt="Card 3">
-  <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681489/ChatGPT_Image_20_sie_2025_09_45_55_ax7x9s.png" alt="Card 4">
-  <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681491/ChatGPT_Image_20_sie_2025_09_52_56_sogpxa.png" alt="Card 5">
-</div>
+<div class="card-container"> <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681494/ChatGPT_Image_19_sie_2025_10_14_56_to8dhy.png" alt="Card 1"> <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681491/ChatGPT_Image_19_sie_2025_16_46_37_iddbfk.png" alt="Card 2"> <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681496/chapter3_eae6qs.png" alt="Card 3"> <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681489/ChatGPT_Image_20_sie_2025_09_45_55_ax7x9s.png" alt="Card 4"> <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681499/czapter_4_jvuemv.png" alt="Card 5">
+<img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681491/ChatGPT_Image_20_sie_2025_09_52_56_sogpxa.png" alt="Card 6"> </div>
 <style>
 .card-container {
   display: flex;
@@ -2137,6 +2132,9 @@ It’s an invitation. </strong></p>
   max-width: 1000px;
   margin: 40px auto;
   transition: all 0.3s ease;
+}
+.card-container img {
+  display: inline-block;
 }
 
 .card-container img {
@@ -2157,41 +2155,23 @@ It’s an invitation. </strong></p>
   display: none;
 }
 
+/* Na ekranach większych niż 600px (desktop) ukrywamy 5 kartę */
+@media (min-width: 601px) {
+  .card-container img:nth-child(5) {
+    display: none;
+  }
+}
+
+/* Na telefonie (max-width: 600px) pokazujemy wszystkie karty */
 @media (max-width: 600px) {
   .card-container img {
-    width: 45%;
-  }
-
-  .card-container img.expanded {
-    width: 90% !important;
+    display: inline-block;
+    width: 45%; /* 2 karty obok siebie */
   }
 }
 </style>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const container = document.querySelector('.card-container');
-  const cards = container.querySelectorAll('img');
-
-  cards.forEach(card => {
-    card.addEventListener('click', () => {
-      const isExpanded = card.classList.contains('expanded');
-
-      // reset wszystkich kart
-      cards.forEach(c => c.classList.remove('expanded', 'hidden'));
-
-      if (!isExpanded) {
-        card.classList.add('expanded');
-        cards.forEach(c => {
-          if (c !== card) c.classList.add('hidden');
-        });
-        // scroll do środka ekranu
-        card.scrollIntoView({behavior: 'smooth', block: 'center'});
-      }
-    });
-  });
-});
-</script>
 <div class="footer-download" style="margin-top: 4rem; text-align: center;">
   <a href="https://drive.google.com/file/d/1KhDWIQrBwb6E7BEEACnCt0afnwfc1HyT/view?usp=sharing" target="_blank" rel="noopener noreferrer">
     <button style="padding: 0.4rem 1rem; background-color: #aecdd2; color: white; border: none; border-radius: 6px; font-size: 0.7rem; cursor: pointer; box-shadow: 0 0 10px rgba(255,255,255,0.3); margin-top: 0.5rem;">
