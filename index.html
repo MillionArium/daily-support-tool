@@ -2127,16 +2127,12 @@ It’s an invitation. </strong></p>
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* domyślnie środek */
+  justify-content: center;
   gap: 10px;
   max-width: 1000px;
   margin: 40px auto;
   transition: all 0.3s ease;
 }
-.card-container img {
-  display: inline-block;
-}
-
 .card-container img {
   width: 18%;
   border-radius: 16px;
@@ -2145,50 +2141,59 @@ It’s an invitation. </strong></p>
   transition: all 0.3s ease;
   z-index: 1;
 }
-
 .card-container img.expanded {
   width: 50% !important;
   z-index: 10;
 }
-
 .card-container img.hidden {
   display: none;
 }
-
-/* Na ekranach większych niż 600px (desktop) ukrywamy 5 kartę */
+/* Ukryj 5 kartę na desktopie */
 @media (min-width: 601px) {
   .card-container img:nth-child(5) {
     display: none;
   }
 }
-
-/* Na telefonie (max-width: 600px) pokazujemy wszystkie karty */
+/* Na telefonie pokazujemy wszystkie karty */
 @media (max-width: 600px) {
   .card-container img {
+    width: 45%;
     display: inline-block;
-    width: 45%; /* 2 karty obok siebie */
   }
 }
 </style>
 
+<!-- JS powiększanie -->
 <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.querySelector('.card-container');
+  const cards = container.querySelectorAll('img');
 
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      const isExpanded = card.classList.contains('expanded');
+      cards.forEach(c => c.classList.remove('expanded', 'hidden'));
+      if (!isExpanded) {
+        card.classList.add('expanded');
+        cards.forEach(c => { if (c !== card) c.classList.add('hidden'); });
+        card.scrollIntoView({behavior: 'smooth', block: 'center'});
+      }
+    });
+  });
+});
+</script>
+
+<!-- Footer / download -->
 <div class="footer-download" style="margin-top: 4rem; text-align: center;">
   <a href="https://drive.google.com/file/d/1KhDWIQrBwb6E7BEEACnCt0afnwfc1HyT/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-    <button style="padding: 0.4rem 1rem; background-color: #aecdd2; color: white; border: none; border-radius: 6px; font-size: 0.7rem; cursor: pointer; box-shadow: 0 0 10px rgba(255,255,255,0.3); margin-top: 0.5rem;">
+    <button style="padding: 0.4rem 1rem; background-color: #aecdd2; color: white; border: none; border-radius: 6px; font-size: 0.7rem; cursor: pointer;">
       👫 Once Upon A Time PDF
     </button>
   </a>
-
-  <div style="margin-top: 1.2rem; display: flex; flex-direction: column; align-items: center;">
-    <p style="color: #ccc; font-size: 0.7rem; margin: 0;">Or scan the QR code to download:</p> 
-    <div class="footer-download" style="margin-top: 2rem; text-align: center;">
-    <img 
-      src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://bit.ly/3Ve82Hq" 
-      alt="QR code to download PDF" 
-      style="width: 90px; height: 90px; margin-top: 0.3rem; border-radius: 6px; box-shadow: 0 0 6px rgba(255,255,255,0.2);">
-  </div>
-    <div class="footer-download" style="margin-top: 4rem; text-align: center;">
+  <p style="color: #ccc; font-size: 0.7rem; margin: 0.5rem 0 0;">Or scan the QR code to download:</p>
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=90x90&data=https://bit.ly/3Ve82Hq" 
+       alt="QR code" style="width:90px; height:90px; margin-top:0.5rem; border-radius:6px;">
+</div>
 
 
 <footer style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 2rem 1rem; font-size: 0.7rem; color: #888; max-width: 800px; margin: 4rem auto;">
