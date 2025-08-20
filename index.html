@@ -2124,18 +2124,16 @@ It’s an invitation. </strong></p>
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 15px;
     margin: 40px auto;
     max-width: 1200px;
-    transition: all 0.3s ease;
-  }
-
-  .card-container.expanded-view {
-    justify-content: center;
   }
 
   .card-container img {
-    width: 18%; /* 5 kart w rzędzie */
+    flex: 1 1 calc(20% - 15px); /* 5 kart w rzędzie */
+    max-width: calc(20% - 15px);
+    height: 180px; /* stała wysokość miniatury */
+    object-fit: cover; /* przycięcie obrazka */
     border-radius: 16px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     cursor: pointer;
@@ -2143,9 +2141,15 @@ It’s an invitation. </strong></p>
     z-index: 1;
   }
 
+  .card-container.expanded-view {
+    justify-content: center;
+  }
+
   .card-container img.expanded {
-    width: 50% !important;
-    transform: scale(1.2); /* efekt powiększenia */
+    flex: none;
+    width: 60% !important; 
+    height: auto !important;
+    transform: scale(1.05);
     z-index: 10;
   }
 
@@ -2154,22 +2158,17 @@ It’s an invitation. </strong></p>
   }
 
   @media (max-width: 600px) {
-    .card-container {
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-
     .card-container img {
-      width: 45%; 
-      margin-bottom: 20px;
+      flex: 1 1 45%;
+      max-width: 45%;
+      height: 140px;
     }
 
     .card-container img.expanded {
       width: 90% !important;
-      margin-bottom: 40px;
     }
   }
-</style
+</style>
 
 <div class="card-container">
   <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681494/ChatGPT_Image_19_sie_2025_10_14_56_to8dhy.png" alt="Card 1">
