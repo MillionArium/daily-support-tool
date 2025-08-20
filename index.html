@@ -2128,80 +2128,69 @@ It’s an invitation. </strong></p>
   <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681489/ChatGPT_Image_20_sie_2025_09_45_55_ax7x9s.png" alt="Card 4">
   <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681491/ChatGPT_Image_20_sie_2025_09_52_56_sogpxa.png" alt="Card 5">
 </div>
-
 <style>
-  .card-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 10px;
-    max-width: 1000px;
-    margin: 40px auto;
-    transition: all 0.3s ease;
-  }
-
-  /* po kliknięciu powiększona karta będzie wyśrodkowana */
- .card-container.expanded-view {
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  max-width: 100%;
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* domyślnie środek */
+  gap: 10px;
+  max-width: 1000px;
+  margin: 40px auto;
+  transition: all 0.3s ease;
 }
 
+.card-container img {
+  width: 18%;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.card-container img.expanded {
+  width: 50% !important;
+  z-index: 10;
+}
+
+.card-container img.hidden {
+  display: none;
+}
+
+@media (max-width: 600px) {
   .card-container img {
-    width: 18%;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    z-index: 1;
+    width: 45%;
   }
 
   .card-container img.expanded {
-    width: 50% !important;
-    z-index: 10;
+    width: 90% !important;
   }
-
-  .card-container img.hidden {
-    display: none;
-  }
-
-  @media (max-width: 600px) {
-    .card-container img {
-      width: 45%;
-      margin-bottom: 20px;
-    }
-
-    .card-container img.expanded {
-      width: 90% !important;
-      margin-bottom: 40px;
-    }
-  }
+}
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const container = document.querySelector('.card-container');
-    const cards = container.querySelectorAll('img');
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.querySelector('.card-container');
+  const cards = container.querySelectorAll('img');
 
-    cards.forEach(card => {
-      card.addEventListener('click', () => {
-        const isExpanded = card.classList.contains('expanded');
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      const isExpanded = card.classList.contains('expanded');
 
-        // reset wszystkich kart
-        cards.forEach(c => c.classList.remove('expanded', 'hidden'));
-        container.classList.remove('expanded-view');
+      // reset wszystkich kart
+      cards.forEach(c => c.classList.remove('expanded', 'hidden'));
 
-        if (!isExpanded) {
-          card.classList.add('expanded');
-          container.classList.add('expanded-view');
-          cards.forEach(c => {
-            if (c !== card) c.classList.add('hidden');
-          });
-        }
-      });
+      if (!isExpanded) {
+        card.classList.add('expanded');
+        cards.forEach(c => {
+          if (c !== card) c.classList.add('hidden');
+        });
+        // scroll do środka ekranu
+        card.scrollIntoView({behavior: 'smooth', block: 'center'});
+      }
     });
   });
+});
 </script>
 <div class="footer-download" style="margin-top: 4rem; text-align: center;">
   <a href="https://drive.google.com/file/d/1KhDWIQrBwb6E7BEEACnCt0afnwfc1HyT/view?usp=sharing" target="_blank" rel="noopener noreferrer">
