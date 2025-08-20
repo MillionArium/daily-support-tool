@@ -2193,6 +2193,10 @@ document.addEventListener('DOMContentLoaded', () => {
         card.classList.add('expanded');
         cards.forEach(c => { if (c !== card) c.classList.add('hidden'); });
         card.scrollIntoView({behavior: 'smooth', block: 'center'});
+         // Płynne przewinięcie tylko na telefonie
+        if (window.innerWidth <= 600) {
+          card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
       }
     });
   });
