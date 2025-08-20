@@ -2119,23 +2119,34 @@ It’s an invitation. </strong></p>
 </div>
  <div class="footer-download" style="margin-top: 4rem; text-align: center;">
  <!-- Six Cards Section -->
+</div> 
+
+<div class="card-container">
+  <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681494/ChatGPT_Image_19_sie_2025_10_14_56_to8dhy.png" alt="Card 1">
+  <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681491/ChatGPT_Image_19_sie_2025_16_46_37_iddbfk.png" alt="Card 2">
+  <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681496/chapter3_eae6qs.png" alt="Card 3">
+  <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681489/ChatGPT_Image_20_sie_2025_09_45_55_ax7x9s.png" alt="Card 4">
+  <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681491/ChatGPT_Image_20_sie_2025_09_52_56_sogpxa.png" alt="Card 5">
+</div>
+
 <style>
   .card-container {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
+    max-width: 1000px;
     margin: 40px auto;
-    max-width: 1200px; /* trochę szersze, żeby 6 zmieściło się wygodnie */
     transition: all 0.3s ease;
   }
 
+  /* po kliknięciu powiększona karta będzie wyśrodkowana */
   .card-container.expanded-view {
     justify-content: center;
   }
 
   .card-container img {
-    width: 15%; /* 100% / 6 kart ≈ 16.6%, zostawiamy 15% żeby mieć marginesy */
+    width: 18%;
     border-radius: 16px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     cursor: pointer;
@@ -2145,7 +2156,6 @@ It’s an invitation. </strong></p>
 
   .card-container img.expanded {
     width: 50% !important;
-    transform: scale(1);
     z-index: 10;
   }
 
@@ -2154,13 +2164,8 @@ It’s an invitation. </strong></p>
   }
 
   @media (max-width: 600px) {
-    .card-container {
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-
     .card-container img {
-      width: 45%; 
+      width: 45%;
       margin-bottom: 20px;
     }
 
@@ -2171,24 +2176,16 @@ It’s an invitation. </strong></p>
   }
 </style>
 
-<div class="card-container">
-  <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681494/ChatGPT_Image_19_sie_2025_10_14_56_to8dhy.png" alt="Card 1">
-  <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681491/ChatGPT_Image_19_sie_2025_16_46_37_iddbfk.png" alt="Card 2">
-  <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681496/chapter3_eae6qs.png" alt="Card 3">
-  <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681489/ChatGPT_Image_20_sie_2025_09_45_55_ax7x9s.png" alt="Card 4">
-  
-  <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681491/ChatGPT_Image_20_sie_2025_09_52_56_sogpxa.png" alt="Card 5">
-</div>
-</div>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const container = document.querySelector('.card-container');
-    const cards = document.querySelectorAll('.card-container img');
+    const cards = container.querySelectorAll('img');
 
     cards.forEach(card => {
       card.addEventListener('click', () => {
         const isExpanded = card.classList.contains('expanded');
 
+        // reset wszystkich kart
         cards.forEach(c => c.classList.remove('expanded', 'hidden'));
         container.classList.remove('expanded-view');
 
