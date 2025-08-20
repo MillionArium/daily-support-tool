@@ -2161,6 +2161,22 @@ It’s an invitation. </strong></p>
     display: inline-block;
   }
 }
+  /* Mobile powiększenie */
+@media (max-width: 600px) {
+  .card-container img {
+    width: 45%;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  .card-container img.expanded {
+    width: 90% !important; /* powiększona karta zajmuje prawie cały ekran */
+    margin-bottom: 40px;
+    display: block;
+  }
+  .card-container img.hidden {
+    display: none; /* ukrywa tylko pozostałe karty */
+  }
+}
 </style>
 
 <!-- JS powiększanie -->
