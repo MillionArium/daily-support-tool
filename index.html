@@ -2161,17 +2161,16 @@ It’s an invitation. </strong></p>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.card-container');
+  if (!container) return;
   const cards = container.querySelectorAll('img');
 
   cards.forEach(card => {
     card.addEventListener('click', () => {
       const isExpanded = card.classList.contains('expanded');
-      cards.forEach(c => c.classList.remove('expanded', 'hidden'));
+      cards.forEach(c => c.classList.remove('expanded','hidden'));
       if (!isExpanded) {
         card.classList.add('expanded');
         cards.forEach(c => { if (c !== card) c.classList.add('hidden'); });
-        card.scrollIntoView({behavior: 'smooth', block: 'center'});
-         // Płynne przewinięcie tylko na telefonie
         if (window.innerWidth <= 600) {
           card.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
