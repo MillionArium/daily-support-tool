@@ -2083,9 +2083,10 @@ It’s an invitation. </strong></p>
 
 <p style="text-align: center;"><strong>Time for a story...</strong> </p> 
 </div>
-<div class="footer-download" style="margin-top: 4rem; text-align: center;"> 
-  <!-- Six Cards Section --> </div>
-  <div class="card-container">
+<div class="footer-download" style="margin-top: 4rem; text-align: center;"> </div>
+
+
+<div class="card-container">
   <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681494/ChatGPT_Image_19_sie_2025_10_14_56_to8dhy.png" alt="Card 1">
   <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681491/ChatGPT_Image_19_sie_2025_16_46_37_iddbfk.png" alt="Card 2">
   <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681496/chapter3_eae6qs.png" alt="Card 3">
@@ -2103,74 +2104,74 @@ It’s an invitation. </strong></p>
   max-width: 1000px;
   margin: 40px auto;
 }
+
 .card-container img {
   width: 18%;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   cursor: pointer;
   transition: all 0.3s ease;
-  z-index: 1;
   position: relative;
+  z-index: 1;
 }
-.card-container img.expanded {
+
+/* unikalne klasy zamiast ogólnych */
+.card-container img.is-expanded {
   width: 50% !important;
   z-index: 100;
 }
-.card-container img.hidden {
-  display: none;
+.card-container img.is-hidden {
+  display: none !important;
 }
 
-/* Hide 5th card on desktop */
+/* desktop – ukrywa 5. obrazek */
 @media (min-width: 601px) {
   .card-container img:nth-child(5) {
     display: none;
   }
 }
 
-/* Mobile cards */
+/* mobile */
 @media (max-width: 600px) {
   .card-container img {
     width: 45%;
     margin-bottom: 20px;
   }
-  .card-container img.expanded {
+  .card-container img.is-expanded {
     width: 90% !important;
     display: block;
     margin-bottom: 40px;
-  }
-  .card-container img.hidden {
-    display: none;
   }
 }
 </style>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
+(function() {
   const container = document.querySelector('.card-container');
-  if (!container) return; // Safeguard
+  if (!container) return;
 
   const cards = container.querySelectorAll('img');
 
   cards.forEach(card => {
     card.addEventListener('click', () => {
-      const isExpanded = card.classList.contains('expanded');
+      const isExpanded = card.classList.contains('is-expanded');
 
-      // Reset all cards
-      cards.forEach(c => c.classList.remove('expanded','hidden'));
+      // reset wszystkich
+      cards.forEach(c => c.classList.remove('is-expanded','is-hidden'));
 
       if (!isExpanded) {
-        card.classList.add('expanded');
-        cards.forEach(c => { if (c !== card) c.classList.add('hidden'); });
+        card.classList.add('is-expanded');
+        cards.forEach(c => { if (c !== card) c.classList.add('is-hidden'); });
 
-        // Smooth scroll on mobile
         if (window.innerWidth <= 600) {
           card.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
       }
     });
   });
-});
+})();
 </script>
+    
  <!-- Footer / download -->
 <div class="footer-download" style="margin-top: 4rem; text-align: center;">
   <a href="https://drive.google.com/file/d/1KhDWIQrBwb6E7BEEACnCt0afnwfc1HyT/view?usp=sharing" target="_blank" rel="noopener noreferrer">
