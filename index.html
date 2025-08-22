@@ -2097,10 +2097,15 @@ It’s an invitation. </strong></p>
 </div>
  <div class="footer-download" style="margin-top: 4rem; text-align: center;">
  <!-- Six Cards Section -->
-</div> 
+<div class="card-container">
+  <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681494/ChatGPT_Image_19_sie_2025_10_14_56_to8dhy.png" alt="Card 1">
+  <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681491/ChatGPT_Image_19_sie_2025_16_46_37_iddbfk.png" alt="Card 2">
+  <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681496/chapter3_eae6qs.png" alt="Card 3">
+  <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681489/ChatGPT_Image_20_sie_2025_09_45_55_ax7x9s.png" alt="Card 4">
+  <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681499/czapter_4_jvuemv.png" alt="Card 5">
+  <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681491/ChatGPT_Image_20_sie_2025_09_52_56_sogpxa.png" alt="Card 6">
+</div>
 
-<div class="card-container"> <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681494/ChatGPT_Image_19_sie_2025_10_14_56_to8dhy.png" alt="Card 1"> <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681491/ChatGPT_Image_19_sie_2025_16_46_37_iddbfk.png" alt="Card 2"> <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681496/chapter3_eae6qs.png" alt="Card 3"> <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681489/ChatGPT_Image_20_sie_2025_09_45_55_ax7x9s.png" alt="Card 4"> <img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681499/czapter_4_jvuemv.png" alt="Card 5">
-<img src="https://res.cloudinary.com/djom96coc/image/upload/v1755681491/ChatGPT_Image_20_sie_2025_09_52_56_sogpxa.png" alt="Card 6"> </div>
 <style>
 .card-container {
   display: flex;
@@ -2109,7 +2114,6 @@ It’s an invitation. </strong></p>
   gap: 10px;
   max-width: 1000px;
   margin: 40px auto;
-  transition: all 0.3s ease;
 }
 .card-container img {
   width: 18%;
@@ -2118,41 +2122,36 @@ It’s an invitation. </strong></p>
   cursor: pointer;
   transition: all 0.3s ease;
   z-index: 1;
+  position: relative;
 }
 .card-container img.expanded {
   width: 50% !important;
-  z-index: 10;
+  z-index: 100;
 }
 .card-container img.hidden {
   display: none;
 }
-/* Ukryj 5 kartę na desktopie */
+
+/* Ukrycie 5. karty na desktopie */
 @media (min-width: 601px) {
   .card-container img:nth-child(5) {
     display: none;
   }
 }
-/* Na telefonie pokazujemy wszystkie karty */
+
+/* Mobile */
 @media (max-width: 600px) {
   .card-container img {
     width: 45%;
-    display: inline-block;
-  }
-}
-  /* Mobile powiększenie */
-@media (max-width: 600px) {
-  .card-container img {
-    width: 45%;
-    display: inline-block;
     margin-bottom: 20px;
   }
   .card-container img.expanded {
-    width: 90% !important; /* powiększona karta zajmuje prawie cały ekran */
+    width: 90% !important;
     margin-bottom: 40px;
     display: block;
   }
   .card-container img.hidden {
-    display: none; /* ukrywa tylko pozostałe karty */
+    display: none;
   }
 }
 </style>
