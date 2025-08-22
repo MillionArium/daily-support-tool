@@ -2122,7 +2122,7 @@ It’s an invitation. </strong></p>
   cursor: pointer;
   transition: all 0.3s ease;
   z-index: 1;
-  position: relative;
+  position: relative; /* ważne dla z-index */
 }
 .card-container img.expanded {
   width: 50% !important;
@@ -2132,7 +2132,7 @@ It’s an invitation. </strong></p>
   display: none;
 }
 
-/* Ukrycie 5. karty na desktopie */
+/* Ukrycie 5. karty tylko na desktopie */
 @media (min-width: 601px) {
   .card-container img:nth-child(5) {
     display: none;
@@ -2147,8 +2147,8 @@ It’s an invitation. </strong></p>
   }
   .card-container img.expanded {
     width: 90% !important;
-    margin-bottom: 40px;
     display: block;
+    margin-bottom: 40px;
   }
   .card-container img.hidden {
     display: none;
@@ -2156,20 +2156,26 @@ It’s an invitation. </strong></p>
 }
 </style>
 
-<!-- JS powiększanie -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.card-container');
   if (!container) return;
+
   const cards = container.querySelectorAll('img');
 
   cards.forEach(card => {
     card.addEventListener('click', () => {
       const isExpanded = card.classList.contains('expanded');
+      // Reset wszystkich kart
       cards.forEach(c => c.classList.remove('expanded','hidden'));
+
       if (!isExpanded) {
+        // Powiększ klikniętą kartę
         card.classList.add('expanded');
+        // Ukryj pozostałe karty
         cards.forEach(c => { if (c !== card) c.classList.add('hidden'); });
+
+        // Płynne scrollowanie tylko na mobile
         if (window.innerWidth <= 600) {
           card.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
