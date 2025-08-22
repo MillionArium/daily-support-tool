@@ -339,29 +339,7 @@ section.intro p {
   <img src="https://res.cloudinary.com/djom96coc/image/upload/v1750109597/ChatGPT_Image_14_cze_2025_20_50_21_sppnvq.png" alt="Card 3" style="border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
   <img src="https://res.cloudinary.com/djom96coc/image/upload/v1750227001/ChatGPT_Image_18_cze_2025_08_03_21_d3mr7g.png" alt="Card 4" style="border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
 </div>
-<!-- JS powiększanie -->
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const container = document.querySelector('.card-container');
-  const cards = container.querySelectorAll('img');
 
-  cards.forEach(card => {
-    card.addEventListener('click', () => {
-      const isExpanded = card.classList.contains('expanded');
-      cards.forEach(c => c.classList.remove('expanded', 'hidden'));
-      if (!isExpanded) {
-        card.classList.add('expanded');
-        cards.forEach(c => { if (c !== card) c.classList.add('hidden'); });
-        card.scrollIntoView({behavior: 'smooth', block: 'center'});
-         // Płynne przewinięcie tylko na telefonie
-        if (window.innerWidth <= 600) {
-          card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-      }
-    });
-  });
-});
-</script>
 <a href="https://drive.google.com/file/d/1tYQxAR_C92aVfWpX2QBf3l3Pr_Hc5sXt/view?usp=sharing" target="_blank" rel="noopener noreferrer">
   <button style="padding: 0.4rem 1rem; background-color: #aecdd2; color: white; border: none; border-radius: 6px; font-size: 0.7rem; cursor: pointer; box-shadow: 0 0 10px rgba(255,255,255,0.3); margin-top: 0.5rem;">
       🧠 The Polyvagal Theory PDF
