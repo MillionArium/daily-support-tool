@@ -2263,27 +2263,18 @@ You don’t need to figure it all out. </p>
       </button>
     </a>
     <style>
-.big-responsive-image {
+.toltec-content .big-responsive-image {
   max-width: 60%;
   height: auto;
   display: block;
-
+  margin: 1rem auto;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 @media (max-width: 600px) {
-  .content-wrapper {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    width: 90vw;         /* szerokość 90% ekranu */
-    margin: 0 auto 2rem; /* wyśrodkowanie i odstęp tylko na dole */
-    text-align: justify;
-  }
-
-  .content-wrapper img {
-    width: 90vw;         /* obrazek dopasowany do szerokości contentu */
-    height: auto;
+  .toltec-content .big-responsive-image {
+    width: 90vw; /* dopasowanie do szerokości ekranu */
     max-width: 100%;
   }
 }
