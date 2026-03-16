@@ -4492,9 +4492,193 @@ and to consciously generate your own music within it.</p>
     </div>
 
     <script>
-        const newsQuestions = ["What attracts your attention most lately?", "What do you feel you need most right now?", "Your current energy feels...", "What landscape calls you today?", "What quality do you want more of?", "What phase of life do you feel in?", "What do you need to listen to more?", "What supports your wellbeing most?", "What kind of wisdom do you seek?", "What word resonates most with you?", "What do you feel ready for?", "What kind of environment restores you?", "What do you need emotionally?", "What feels most important now?", "What kind of growth is calling you?", "What do you trust most right now?", "What rhythm feels natural to you?", "What quality do you admire most?", "What do you want to cultivate?", "What direction feels closest to you today?"];
+        const newsQuestions = ["What describes your current inner state best? ",  
+
+ 
+ 
+
+"Right now you are most interested in: ",  
+
+ 
+ 
+
+"When you think about the near future you feel: ",  
+
+ 
+ 
+
+  
+
+ 
+ 
+
+"What do you feel you need most right now? ",  
+
+ 
+ 
+
+"When facing uncertainty you tend to: ",  
+
+ 
+ 
+
+"Which environment attracts you most today? ",  
+
+ 
+ 
+
+"Your mind is currently more focused on:",  
+
+ 
+ 
+
+"What type of activity sounds most appealing? ",  
+
+ 
+ 
+
+"What kind of question occupies your mind? ",  
+
+ 
+ 
+
+"You currently feel closest to the energy of: ",  
+
+ 
+ 
+
+"Your current emotional tone is mostly: ",  
+
+ 
+ 
+
+"You feel most comfortable when you are: ",  
+
+ 
+ 
+
+"If you had a free day you would probably: ",  
+
+ 
+ 
+
+"What feels like your current challenge? ",  
+
+ 
+ 
+
+"You feel most alive when: ",  
+
+ 
+ 
+ 
+ 
+
+"Which word resonates most today? ",  
+
+ 
+ 
+
+"Your attention is currently moving toward: ",  
+
+ 
+ 
+
+"If your life were a landscape right now, it would feel like: "  ];
         
-        const newsAnswers = [["New possibilities","Connection","Reflection","Understanding"], ["Inspiration","Warmth","Solitude","Perspective"], ["Creative","Relational","Deep","Grounded"], ["Sunrise","Summer field","Quiet lake","Snow mountain"], ["Vision","Love","Inner truth","Wisdom"], ["Beginning","Growth","Transformation","Integration"], ["Ideas","Heart","Silence","Elders"], ["Movement","Friendship","Nature","Stillness"], ["Creativity","Belonging","Self-knowledge","Clarity"], ["Dream","Compassion","Depth","Guidance"], ["Starting","Sharing","Letting go","Learning"], ["Light","Warmth","Water","Mountains"], ["Joy","Closeness","Space","Stability"], ["Opportunity","Community","Meaning","Perspective"], ["Exploration","Relationship","Inner work","Understanding"], ["Intuition","Emotion","Inner voice","Experience"], ["Morning","Afternoon","Evening","Winter quiet"], ["Vision","Kindness","Honesty","Wisdom"], ["Ideas","Relationships","Self awareness","Knowledge"], ["East","South","West","North"]];
+        const newsAnswers = [["I feel inspired by new possibilities ","I feel drawn to people and connection ","I feel reflective and inward ","I feel calm and observant "],  
+
+ 
+ 
+
+["Starting something new ","Sharing experiences with others ","Understanding yourself more deeply ","Making sense of what you have learned "],  
+
+ 
+ 
+
+["Excited about what could begin ","Curious about who you will meet ","Thoughtful about what needs to change ","Patient about what will unfold "],  
+
+ 
+ 
+ 
+ 
+
+["Vision, Inspiration","Connection ","Solitude ","Wisdom, Clarity"],  
+
+ 
+ 
+
+["Try something new ","Talk with someone you trust ","Reflect quietly ","Step back and observe "],  
+
+ 
+ 
+
+["Open skies and sunrise ","Warm places full of life ","Quiet forests or water ","Mountains or vast landscapes  "],  
+
+ 
+ 
+
+["Future ","People ","Feelings ","Understanding "],  
+
+ 
+ 
+
+["Planning a new project ","Spending time with loved ones ","Self-Journaling or reflecting ","Reading or learning from experience "],  
+
+ 
+ 
+
+["What could I create? ","Who can I share this with? ","What is really going on inside me? "," What does this experience teach me? "],  
+
+ 
+ 
+
+["A sunrise ","A warm summer afternoon ","A quiet sunset ","A still winter morning "],  
+
+ 
+ 
+
+["Inspired ","Open-hearted ","Deep and reflective ","Calm and thoughtful "],  
+
+ 
+ 
+
+["Beginning something new ","Engaging with others ","Exploring inner feelings ","Seeing the bigger picture "],  
+
+ 
+ 
+
+["Explore a new idea ","Meet or call someone ","Spend time alone reflecting ","Read, learn, or contemplate "],  
+
+ 
+ 
+
+["Turning inspiration into action ","Balancing emotions and relationships ","Facing inner truths ","Integrating past experiences "],  
+
+ 
+ 
+
+["You discover a new direction ","You feel emotionally connected ","You understand something deeply ","You see how everything fits together "],  
+
+ 
+ 
+
+  
+
+ 
+ 
+
+["Vision","Kindness, Heart","Honesty, Depth","Wisdom"],  
+
+ 
+ 
+
+["Possibilities ","Relationships "," Inner truth ","Meaning "],  
+
+ 
+ 
+
+["Dawn on the horizon ","A lively summer field ","Twilight near water ","A quiet snowy plain "]];
         
         const newsDirections = ["east", "south", "west", "north"];
         let newsCurrent = 0;
