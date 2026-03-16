@@ -337,13 +337,19 @@ section.intro p {
     </li>
     <li>
          <li>
-      <a href="#project30" style="text-decoration: none; color: #4a5568;">
+      <a href="#project31" style="text-decoration: none; color: #4a5568;">
         The Theory of Human Harmony
       </a>
     </li>
-    <li>
+     <li>
+         <li>
       <a href="#project32" style="text-decoration: none; color: #4a5568;">
         Something Old, Something New — Not Necessarily All Blue 
+      </a>
+    </li>
+    <li>
+      <a href="#project33" style="text-decoration: none; color: #4a5568;">
+        NEWS
         <span style="background-color: #f87171; color: white; font-size: 0.6rem; padding: 2px 6px; border-radius: 6px; margin-left: 6px;">NEW</span>
          <span style="background-color: #34d399; color: white; font-size: 0.6rem; padding: 2px 6px; border-radius: 6px; margin-left: 4px;">REMINDER</span>
       </a>
@@ -4325,8 +4331,377 @@ and to consciously generate your own music within it.</p>
 </div>
  </div>
 </section>
+      
 <div class="footer-download" style="margin-top: 4rem; text-align: center;"> </div>
+<section id="project33" style="padding: 40px 20px; font-family: 'Georgia', serif; color: #333;">
+    
+    <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <h1 style="font-size: 2.8rem; letter-spacing: 5px; margin-bottom: 5px; color: #2c3e50; text-transform: uppercase;">NEWS</h1>
+        <p style="font-style: italic; color: #8e9491; margin-bottom: 2rem; letter-spacing: 1px;">North. East. West. South. A Journey to Balance.</p>
+        
+        <img class="big-responsive-image" src="https://res.cloudinary.com/djom96coc/image/upload/v1773660182/Gemini_Generated_Image_q4g3p6q4g3p6q4g3_thwaec.png" 
+             style="width: 100%; max-width: 650px; height: auto; margin: 0 auto 2.5rem auto; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); display: block;">
+        
+        <p style="font-size: 1.15rem; line-height: 1.7; max-width: 650px; margin: 0 auto 3rem auto; color: #5d6d7e;">
+            Four directions. Four elements. One goal: Your wholeness. Step into the world of NEWS and discover how the ancient wisdom of the Medicine Wheel becomes your most modern tool for growth, clarity, and inner peace.
+        </p>
+    </div>
 
+    <style>
+        #project32 .wheel-container {
+            position: relative;
+            width: 320px;
+            height: 320px;
+            margin: 40px auto;
+        }
+
+        #project32 .wheel {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            overflow: hidden;
+            border: 8px solid white;
+            transition: transform 1.5s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+            box-shadow: 0 15px 45px rgba(0,0,0,0.1);
+        }
+
+        #project32 .quadrant {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.35;
+            transition: all 0.8s ease;
+        }
+
+        /* Gradienty dopasowane do Twoich grafik akwarelowych */
+        #project32 .east { background: linear-gradient(135deg, #fff9e6, #f4d35e); color: #7d6608; }
+        #project32 .south { background: linear-gradient(135deg, #fff0ed, #e07a5f); color: #78281f; }
+        #project32 .west { background: linear-gradient(135deg, #e8eaf6, #3d405b); color: #ffffff; }
+        #project32 .north { background: linear-gradient(135deg, #f4f7f6, #aecdd2); color: #2e4053; }
+
+        #project32 .active {
+            opacity: 1;
+            box-shadow: inset 0 0 30px rgba(255,255,255,0.4);
+        }
+
+        #project32 .animal {
+            font-size: 28px;
+            margin-top: 8px;
+            display: none;
+        }
+
+        #project32 .show {
+            display: block;
+        }
+
+        #project32 .center-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            border-radius: 50%;
+            width: 115px;
+            height: 115px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 1px solid rgba(174, 205, 210, 0.5);
+            text-align: center;
+            padding: 10px;
+            z-index: 10;
+        }
+
+        #project32 .quiz-box {
+            max-width: 600px;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid rgba(255,255,255,0.8);
+        }
+
+        #project32 .answers label {
+            display: block;
+            margin: 10px 0;
+            padding: 14px 18px;
+            background: white;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.3s;
+            border: 1px solid #f0f0f0;
+            text-align: left;
+        }
+
+        #project32 .answers label:hover {
+            border-color: #aecdd2;
+            background: #f9fbfb;
+        }
+
+        #project32 .nav {
+            margin-top: 25px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #project32 button {
+            padding: 12px 24px;
+            border: 1px solid #aecdd2;
+            background: white;
+            color: #5d6d7e;
+            border-radius: 25px;
+            cursor: pointer;
+            font-family: 'Georgia', serif;
+            transition: 0.3s;
+        }
+
+        #project32 button:hover {
+            background: #aecdd2;
+            color: white;
+        }
+
+        #project32 #revealBtn {
+            width: 100%;
+            margin-top: 20px;
+            background: #2c3e50;
+            color: white;
+            border: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        #project32 #revealBtn:hover {
+            background: #1a252f;
+        }
+
+        #project32 .progress {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #aecdd2;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+    </style>
+
+    <div class="wheel-container">
+        <div id="wheel" class="wheel">
+            <div id="east" class="quadrant east">East <div id="eagle" class="animal">🦅</div></div>
+            <div id="south" class="quadrant south">South <div id="hummingbird" class="animal">🐦</div></div>
+            <div id="west" class="quadrant west">West <div id="bear" class="animal">🐻</div></div>
+            <div id="north" class="quadrant north">North <div id="bison" class="animal">🦬</div></div>
+        </div>
+        <div class="center-circle">
+            <div style="font-size: 24px; margin-bottom: 5px;">🪶</div>
+            <div id="centerText" style="font-size: 10px; font-weight: bold; line-height: 1.2; color: #2c3e50;">Tap into your direction</div>
+        </div>
+    </div>
+
+    <div class="quiz-box">
+        <div class="progress" id="progress"></div>
+        <h3 id="question" style="margin-bottom: 20px; color: #2c3e50; font-weight: normal; line-height: 1.4; min-height: 50px;"></h3>
+        <div id="answers" class="answers"></div>
+        <div class="nav">
+            <button onclick="prevQuestion()">Previous</button>
+            <button onclick="nextQuestion()">Next</button>
+        </div>
+        <button id="revealBtn" onclick="showResult()">Reveal My Direction</button>
+    </div>
+
+    <script>
+        const questions = [
+           "What describes your current inner state best? ", 
+
+"Right now you are most interested in: ", 
+
+"When you think about the near future you feel: ", 
+
+ 
+
+"What do you feel you need most right now? ", 
+
+"When facing uncertainty you tend to: ", 
+
+"Which environment attracts you most today? ", 
+
+"Your mind is currently more focused on:", 
+
+"What type of activity sounds most appealing? ", 
+
+"What kind of question occupies your mind? ", 
+
+"You currently feel closest to the energy of: ", 
+
+"Your current emotional tone is mostly: ", 
+
+"You feel most comfortable when you are: ", 
+
+"If you had a free day you would probably: ", 
+
+"What feels like your current challenge? ", 
+
+"You feel most alive when: ", 
+
+
+
+"Which word resonates most today? ", 
+
+"Your attention is currently moving toward: ", 
+
+"If your life were a landscape right now, it would feel like: " 
+        ];
+
+        const answers = [
+            ["I feel inspired by new possibilities ","I feel drawn to people and connection ","I feel reflective and inward ","I feel calm and observant "], 
+
+["Starting something new ","Sharing experiences with others ","Understanding yourself more deeply ","Making sense of what you have learned "], 
+
+["Excited about what could begin ","Curious about who you will meet ","Thoughtful about what needs to change ","Patient about what will unfold "], 
+
+
+
+["Vision, Inspiration","Connection ","Solitude ","Wisdom, Clarity"], 
+
+["Try something new ","Talk with someone you trust ","Reflect quietly ","Step back and observe "], 
+
+["Open skies and sunrise ","Warm places full of life ","Quiet forests or water ","Mountains or vast landscapes  "], 
+
+["Future ","People ","Feelings ","Understanding "], 
+
+["Planning a new project ","Spending time with loved ones ","Self-Journaling or reflecting ","Reading or learning from experience "], 
+
+["What could I create? ","Who can I share this with? ","What is really going on inside me? "," What does this experience teach me? "], 
+
+["A sunrise ","A warm summer afternoon ","A quiet sunset ","A still winter morning "], 
+
+["Inspired ","Open-hearted ","Deep and reflective ","Calm and thoughtful "], 
+
+["Beginning something new ","Engaging with others ","Exploring inner feelings ","Seeing the bigger picture "], 
+
+["Explore a new idea ","Meet or call someone ","Spend time alone reflecting ","Read, learn, or contemplate "], 
+
+["Turning inspiration into action ","Balancing emotions and relationships ","Facing inner truths ","Integrating past experiences "], 
+
+["You discover a new direction ","You feel emotionally connected ","You understand something deeply ","You see how everything fits together "], 
+
+ 
+
+["Vision","Kindness, Heart","Honesty, Depth","Wisdom"], 
+
+["Possibilities ","Relationships "," Inner truth ","Meaning "], 
+
+["Dawn on the horizon ","A lively summer field ","Twilight near water ","A quiet snowy plain "] 
+        ];
+
+        const directions = ["east", "south", "west", "north"];
+        let current = 0;
+        let selections = new Array(20);
+        let spinAngle = 0;
+
+        function showQuestion() {
+            document.getElementById("progress").innerText = `Step ${current + 1} of ${questions.length}`;
+            document.getElementById("question").innerText = questions[current];
+            let html = "";
+            answers[current].forEach((a, i) => {
+                let checked = selections[current] === directions[i] ? "checked" : "";
+                html += `<label><input type="radio" name="answer" value="${directions[i]}" ${checked}> ${a}</label>`;
+            });
+            document.getElementById("answers").innerHTML = html;
+        }
+
+        function saveAnswer() {
+            let selected = document.querySelector("input[name='answer']:checked");
+            if (selected) { selections[current] = selected.value; }
+        }
+
+        function nextQuestion() {
+            saveAnswer();
+            if (current < questions.length - 1) { current++; showQuestion(); }
+        }
+
+        function prevQuestion() {
+            saveAnswer();
+            if (current > 0) { current--; showQuestion(); }
+        }
+
+        function showResult() {
+            saveAnswer();
+            let score = {east: 0, south: 0, west: 0, north: 0};
+            selections.forEach(a => { if (a) score[a]++; });
+            let result = Object.keys(score).reduce((a, b) => score[a] > score[b] ? a : b);
+
+            let wheel = document.getElementById("wheel");
+            spinAngle += 720; // Obrót o dwa pełne koła dla efektu
+            wheel.style.transform = "rotate(" + spinAngle + "deg)";
+
+            document.querySelectorAll(".quadrant").forEach(q => q.classList.remove("active"));
+            document.getElementById(result).classList.add("active");
+            document.querySelectorAll(".animal").forEach(a => a.classList.remove("show"));
+
+            // Ikony zwierząt
+            if(result === "east") document.getElementById("eagle").classList.add("show");
+            if(result === "south") document.getElementById("hummingbird").classList.add("show");
+            if(result === "west") document.getElementById("bear").classList.add("show");
+            if(result === "north") document.getElementById("bison").classList.add("show");
+
+            const resultText = {
+                east: "EAST: New Beginnings & Vision",
+                south: "SOUTH: Heart, Fire & Connection",
+                west: "WEST: Introspection & Transformation",
+                north: "NORTH: Wisdom & Inner Silence"
+            };
+            document.getElementById("centerText").innerText = resultText[result];
+        }
+
+        showQuestion();
+        </script>
+
+<div style="margin-top: 5rem; padding: 30px; background: rgba(174, 205, 210, 0.05); border-radius: 20px; text-align: center; font-family: 'Georgia', serif;">
+    
+    <div style="font-size: 0.9rem; line-height: 1.8; color: #5d6d7e; max-width: 600px; margin: 0 auto;">
+        <p style="margin-bottom: 1.5rem;">
+            If this work resonates with you, you can unlock the full workbook through a 
+            <a href="https://buycoffee.to/millionarium" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               style="text-decoration: none; font-size: 1.2rem; display: inline-block; padding: 10px 20px; border-radius: 30px; background-color: #f4d35e; color: #7d6608; font-weight: bold; transition: 0.3s; margin: 0 5px; box-shadow: 0 4px 15px rgba(244, 211, 94, 0.2);">
+               ☕ offering
+            </a>
+        </p>
+        
+        <p style="background: white; padding: 20px; border-radius: 15px; border: 1px dashed #aecdd2;">
+            <span style="display: block; margin-bottom: 10px; font-weight: bold; color: #2c3e50;">How to receive your toolkit:</span>
+            Simply include your <strong>email address</strong> and the <strong>project title</strong> in the <span style="color: #e07a5f;">dedication/message field</span>. 
+            <br><br>
+            <span style="font-size: 0.8rem; font-style: italic;">
+                <strong>Note:</strong> It is crucial to repeat your email there, as the standard field is for your reference only. I will personally send the workbook to the address provided in the message.
+            </span>
+        </p>
+        
+        <p style="margin-top: 1.5rem; font-size: 0.8rem; opacity: 0.7;">
+            This ensures you receive the toolkit while helping this work continue to grow.
+        </p>
+    </div>
+
+    <div style="margin-top: 3rem;">
+        <a href="#Stress Free Menu" 
+           style="padding: 10px 25px; background-color: #aecdd2; color: white; text-decoration: none; border-radius: 30px; font-size: 0.8rem; letter-spacing: 1px; box-shadow: 0 4px 10px rgba(174,205,210,0.3); transition: 0.3s;">
+           ▲ BACK TO MENU
+        </a>
+    </div>
+</div>
+</section>
 </p>
   <p style="margin: 0.6rem 0 0.3rem;"><strong>Thank you for being part of the🌿One-Coin Circle™</strong></p>
   <p style="font-family: 'Vivaldi', cursive; font-size: 1rem; margin: 0;">Weronika Macioszczyk</p>
