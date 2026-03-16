@@ -4704,16 +4704,38 @@ and to consciously generate your own music within it.</p>
 
         function nextQuestion() { saveAnswer(); if (newsCurrent < newsQuestions.length - 1) { newsCurrent++; showQuestion(); } }
         function prevQuestion() { saveAnswer(); if (newsCurrent > 0) { newsCurrent--; showQuestion(); } }
+function saveAnswer() {
+            let selected = document.querySelector("input[name='newsAns']:checked");
+            if (selected) newsSelections[newsCurrent] = selected.value;
+        }
+
+        function nextQuestion() { saveAnswer(); if (newsCurrent < newsQuestions.length - 1) { newsCurrent++; showQuestion(); } }
+        function prevQuestion() { saveAnswer(); if (newsCurrent > 0) { newsCurrent--; showQuestion(); } }
 
         function showResult() {
             saveAnswer();
+            
             let score = {east:0, south:0, west:0, north:0};
-            newsSelections.forEach(a => { if(a) score[a]++; });
+            let totalAnswers = 0;
+            
+            newsSelections.forEach(a => { 
+                if(a) {
+                    score[a]++; 
+                    totalAnswers++;
+                }
+            });
+
+            // Blokada: jeśli użytkownik nie odpowiedział na nic, nie pokazujemy wyniku
+            if (totalAnswers === 0) {
+                alert("Please answer at least one question before revealing your direction.");
+                return; 
+            }
+
             let res = Object.keys(score).reduce((a, b) => score[a] > score[b] ? a : b);
 
             const results = {
                 east: { title: "East: Vision", icon: "🦅", desc: "You are entering a phase of new light and clarity. Like the eagle, it's time to rise above and see the big picture. Your journey starts here." },
-                south: { title: "South: Connection", icon: "🐺", desc: "Your energy is centered around your heart and relationships. Trust the fire of your passion and the joy of simple connection." },
+                south: { title: "South: Connection", icon: "🐦", desc: "Your energy is centered around your heart and relationships. Trust the fire of your passion and the joy of simple connection." },
                 west: { title: "West: Transformation", icon: "🐻", desc: "You are in a period of deep introspection. Like the bear in the cave, your strength comes from silence and inner healing." },
                 north: { title: "North: Wisdom", icon: "🦬", desc: "You are connecting with the wisdom of the ancestors and the peace of the spirit. Ground yourself in clarity and elder wisdom." }
             };
@@ -4733,6 +4755,8 @@ and to consciously generate your own music within it.</p>
         }
         showQuestion();
     </script>
+    <style>@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }</style>
+</section>
     <style>@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }</style>
 </section>
 </p>
