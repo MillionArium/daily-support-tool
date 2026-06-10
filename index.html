@@ -4894,7 +4894,6 @@ function saveAnswer() {
    </h1>
 <div style="max-width: 720px; margin: 2rem auto; text-align: center; font-size: 1rem; line-height: 1.6; color: #1f2937;">
 
-
 <img 
   id="downloadImage"
   src="https://res.cloudinary.com/djom96coc/image/upload/v1781093926/1000014074_g5dund.png"
@@ -4910,24 +4909,97 @@ function saveAnswer() {
   "
 >
 
+<!-- POPUP -->
+<div id="downloadPopup" style="
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.55);
+  z-index:9999;
+  justify-content:center;
+  align-items:center;
+">
+
+  <div style="
+    background:white;
+    padding:24px;
+    border-radius:16px;
+    max-width:320px;
+    width:90%;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    font-family:sans-serif;
+  ">
+
+    <p style="
+      margin-bottom:20px;
+      font-size:16px;
+      line-height:1.5;
+      color:#333;
+    ">
+      Download this illustration?
+    </p>
+
+    <button id="confirmDownload" style="
+      padding:10px 18px;
+      border:none;
+      border-radius:8px;
+      background:black;
+      color:white;
+      cursor:pointer;
+      margin-right:10px;
+    ">
+      Download
+    </button>
+
+    <button id="cancelDownload" style="
+      padding:10px 18px;
+      border:none;
+      border-radius:8px;
+      background:#eee;
+      cursor:pointer;
+    ">
+      Cancel
+    </button>
+
+  </div>
+</div>
+
 <script>
-document.getElementById('downloadImage').addEventListener('click', async function () {
-    const imageUrl = this.src;
+const image = document.getElementById('downloadImage');
+const popup = document.getElementById('downloadPopup');
 
-    const response = await fetch(imageUrl);
-    const blob = await response.blob();
+image.addEventListener('click', () => {
+  popup.style.display = 'flex';
+});
 
-    const blobUrl = window.URL.createObjectURL(blob);
+document.getElementById('cancelDownload').addEventListener('click', () => {
+  popup.style.display = 'none';
+});
 
-    const a = document.createElement('a');
-    a.href = blobUrl;
-    a.download = 'complexity-science-poster.png';
+document.getElementById('confirmDownload').addEventListener('click', async () => {
 
-    document.body.appendChild(a);
-    a.click();
+  const imageUrl = image.src;
 
-    document.body.removeChild(a);
-    window.URL.revokeObjectURL(blobUrl);
+  const response = await fetch(imageUrl);
+  const blob = await response.blob();
+
+  const blobUrl = window.URL.createObjectURL(blob);
+
+  const a = document.createElement('a');
+  a.href = blobUrl;
+  a.download = 'complexity-science-poster.png';
+
+  document.body.appendChild(a);
+  a.click();
+
+  document.body.removeChild(a);
+  window.URL.revokeObjectURL(blobUrl);
+
+  popup.style.display = 'none';
 });
 </script>
 
